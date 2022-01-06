@@ -1,3 +1,14 @@
+#' Negative log likelyhood
+#'
+#' @param guess A vector of length 5 when d=2, it contains the mu and A values as elements
+#' @param sam1 A matrix containing the original sample of environmental combinations that correspond to presences
+#' @param sam2 matrix containing a second random sample of environmental combinations which come from the area of study (M)
+#'
+#' @return A negative log likelyhood value
+#' @export
+#'
+#' @examples
+#' negloglike(initialValues, spOccPnts, samMPts)
 negloglike <- function(guess, sam1, sam2){
   # define the parameters of interest from the guess parameter
   mu <- guess[1:2]
