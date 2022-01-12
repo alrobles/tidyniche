@@ -15,13 +15,11 @@ negloglike_multivariable <- function(guess, sam1, sam2){
   # define the parameters of interest from the guess parameter
   mu <- guess$mu
   A <- guess$A
-  # original sample size: number of presence points in the sample
-  n <- nrow(sam1)
 
   q1 <- apply(sam1, 1, quad, mu, A) # quadratic terms of presence points
   q2 <- apply(sam2, 1, quad, mu, A) # quadratic terms of M points
 
   # negative log-likelihood value
-  S <- 0.5*sum(q1) + n*log(sum(exp(-0.5*q2)))
+  S <- get_negative_log(q1, q2)
   return(S)
 }
