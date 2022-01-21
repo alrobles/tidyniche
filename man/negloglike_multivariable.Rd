@@ -4,10 +4,12 @@
 \alias{negloglike_multivariable}
 \title{Negative log likelyhood}
 \usage{
-negloglike_multivariable(guess, sam1, sam2)
+negloglike_multivariable(mu, A, sam1, sam2)
 }
 \arguments{
-\item{guess}{A list of length 2, whit two objets, a vector mu of parameters, And a matrix A as the inverse of covariance matrix}
+\item{mu}{A vector mu of parameters}
+
+\item{A}{matrix as the inverse of covariance matrix}
 
 \item{sam1}{A matrix containing the original sample of environmental combinations that correspond to presences}
 
@@ -20,6 +22,6 @@ A negative log likelyhood value
 Negative log likelyhood
 }
 \examples{
-par <- get_ellip_par(spOccPnts)
-negloglike_multivariable(par, spOccPnts, samMPts)
+par <- get_optim_par(spOccPnts)
+negloglike_multivariable(par$mu, par$A, spOccPnts, samMPts)
 }

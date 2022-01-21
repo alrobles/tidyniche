@@ -7,7 +7,7 @@
 #' @export
 #'
 #' @examples
-#' par <- get_ellip_par(spOccPnts)
+#' par <- get_optim_par(spOccPnts)
 #' q1 <- apply(spOccPnts, 1, quad, par$mu, par$A)
 #' q2 <- apply(samMPts, 1, quad, par$mu, par$A) # quadratic terms of M points
 #' get_negative_log(q1, q2)
