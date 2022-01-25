@@ -24,8 +24,6 @@ get_suitability <- function(df, el_pars){
                             df = (ncol(df) - 1)
   )
 
-  suit <- exp(log(samMPts) - log(max.val))
-
   exp(log(samMPts) - log(max.val))
 
 }
