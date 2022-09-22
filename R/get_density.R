@@ -14,6 +14,6 @@ get_density <- function(df, env){
   params <- get_ellip_par(pts)
   dens <- mvnfast::dmvn(X = pts,
                mu = params$mu,
-               sigma = params$A)
+               sigma = params$S)
   cbind(pts, dens)
 }

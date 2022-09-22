@@ -12,14 +12,14 @@ get_negative_log(q1, q2)
 \item{q2}{quadratic terms of M points}
 }
 \value{
-A single value of the negative log-likelehood
+A single value of the negative log-likelihood
 }
 \description{
 Get the negative log-likelihood value from quadratic forms of environmental information from presence points and a sample from an M hypothesis
 }
 \examples{
 par <- get_optim_par(spOccPnts)
-q1 <- apply(spOccPnts, 1, quad, par$mu, par$A)
-q2 <- apply(samMPts, 1, quad, par$mu, par$A) # quadratic terms of M points
+q1 <- mahalanobis(spOccPnts, par$mu, par$A, inverted = TRUE)
+q2 <- mahalanobis(samMPts, par$mu, par$A, inverted = TRUE)
 get_negative_log(q1, q2)
 }

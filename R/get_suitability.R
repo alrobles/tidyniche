@@ -15,12 +15,12 @@
 get_suitability <- function(df, el_pars){
   max.val <- mvnfast::dmvt(X = el_pars$mu,
                            mu = el_pars$mu,
-                           sigma = el_pars$A,
+                           sigma = el_pars$S,
                            df = (ncol(df) - 1)
   )
   samMPts <-  mvnfast::dmvt(X = df,
                             mu = el_pars$mu,
-                            sigma = el_pars$A,
+                            sigma = el_pars$S,
                             df = (ncol(df) - 1)
   )
 

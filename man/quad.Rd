@@ -9,7 +9,7 @@ quad(xi, mu, A)
 \arguments{
 \item{xi}{An environmental data frame}
 
-\item{mu}{A vector witht the average of environmental variables}
+\item{mu}{A vector with the average of environmental variables}
 
 \item{A}{matrix of inverse of covariance of environmental variables}
 }
@@ -20,6 +20,6 @@ This function return a matrix with the quadratic form
 quad  Function that calculates quadratic terms
 }
 \examples{
-par <- get_ellip_par(spOccPnts)
+par <- get_optim_par(spOccPnts)
 quad(xi = spOccPnts, mu = par$mu, A = par$A)
 }

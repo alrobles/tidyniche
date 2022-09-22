@@ -14,7 +14,8 @@ get_negloglike_optim_par(env_pts, M_pts)
 \item{M_pts}{A dataframe with a sample of environmental values inside an M hypothesis region.}
 }
 \value{
-A list with optimized parameters for negloglike function
+A list with optimized parameters for negloglike function. mu is a vector of
+centroids and S is a covariance matrix.
 }
 \description{
 get_negloglike_optim_par
@@ -22,5 +23,7 @@ Function  to optime negloglike function given parameters from presence points an
 of environmental points from a M hypothesis. Returns a list of
 }
 \examples{
-get_negloglike_optim_par(spOccPnts, samMPts)
+MPts <- sam_polyM(Mshp, stack_1_12, 1000)
+get_negloglike_optim_par(head(spOccPnts, 30), MPts)
+
 }

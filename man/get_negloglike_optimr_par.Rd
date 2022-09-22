@@ -24,5 +24,6 @@ Function  to optime negloglike function given parameters from presence points an
 of environmental points from a M hypothesis. Internally runs Returns a list of parameters
 }
 \examples{
-get_negloglike_optimr_par(spOccPnts, samMPts)
+MPts <- sam_polyM(Mshp, stack_1_12, 500)
+get_negloglike_optimr_par(head(spOccPnts, 30), MPts)
 }

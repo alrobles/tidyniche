@@ -11,7 +11,10 @@
 #' get_chi_prob(spOccPnts, pars)
 get_chi_prob <- function(env, el_pars){
   mahadist <- get_mahalanobis(env, el_pars)
-  p <- pchisq(mahadist, df = ncol(env)-1, lower.tail=FALSE)
+  # checar que el numero de grados de libertad debe ser el numero de variables
+  #p <- pchisq(mahadist, df = ncol(env) - 1, lower.tail=FALSE)
+
+  p <- pchisq(mahadist, df = ncol(env) - 1, lower.tail=FALSE)
   return(p)
 }
 

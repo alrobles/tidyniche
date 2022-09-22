@@ -4,13 +4,13 @@
 \alias{get_ellip_par}
 \title{Get ellipsoid parameters. A function to compute average and the inverse of covariance matrix from environmental data}
 \usage{
-get_ellip_par(df)
+get_ellip_par(env)
 }
 \arguments{
-\item{df}{A data frame containing environmental variables}
+\item{env}{A data frame containing environmental variables}
 }
 \value{
-A list with computed average of envinronmental variables and the inverse of covariance matrix
+A list with computed average of environmental variables and the covariance matrix
 }
 \description{
 Get ellipsoid parameters. A function to compute average and the inverse of covariance matrix from environmental data

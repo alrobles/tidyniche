@@ -2,8 +2,7 @@
 % Please edit documentation in R/guess_latlon.R
 \name{guess_latlon}
 \alias{guess_latlon}
-\title{code adapted from the scrubr package - source at github.com/ropensci/scrubr/
-original from leaflet package - source at github.com/rstudio/leaflet}
+\title{guess location}
 \usage{
 guess_latlon(x, lat = NULL, lon = NULL)
 }
@@ -15,7 +14,7 @@ guess_latlon(x, lat = NULL, lon = NULL)
 \item{lon}{column with longitude information}
 }
 \value{
-
+A data frame with geographical coordinates
 }
 \description{
 code adapted from the scrubr package - source at github.com/ropensci/scrubr/

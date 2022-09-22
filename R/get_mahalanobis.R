@@ -12,6 +12,6 @@
 get_mahalanobis <- function(df, el_pars){
   mahadist <- mvnfast::maha(X = df,
                mu = el_pars$mu,
-                 sigma = el_pars$A)
+                 sigma = el_pars$S)
   return(mahadist)
 }

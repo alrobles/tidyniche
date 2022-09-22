@@ -8,7 +8,7 @@
 #' @export
 #'
 #' @examples
-#' sam_polyM(M.shp = Mshp, N = 10000, env = stack_1_12 )
+#' sam_polyM(M.shp = Mshp, N = 100, env = stack_1_12 )
 sam_polyM <- function(M.shp, env, N = 10000){
   # crop and mask the environmental layers with the M polygon
   crop.M <- raster::crop(env, M.shp)

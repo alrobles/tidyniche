@@ -4,24 +4,24 @@
 \alias{negloglike_multivariable}
 \title{Negative log likelyhood}
 \usage{
-negloglike_multivariable(mu, A, sam1, sam2)
+negloglike_multivariable(mu, S, sam1, sam2)
 }
 \arguments{
 \item{mu}{A vector mu of parameters}
 
-\item{A}{matrix as the inverse of covariance matrix}
+\item{S}{The covariance matrix from environmental data frame}
 
-\item{sam1}{A matrix containing the original sample of environmental combinations that correspond to presences}
+\item{sam1}{A data.frame containing the original sample of environmental combinations that correspond to presences}
 
-\item{sam2}{matrix containing a second random sample of environmental combinations which come from the area of study (M)}
+\item{sam2}{A data.frame containing a second random sample of environmental combinations which come from the area of study (M)}
 }
 \value{
-A negative log likelyhood value
+A negative log likelihood value
 }
 \description{
 Negative log likelyhood
 }
 \examples{
-par <- get_optim_par(spOccPnts)
-negloglike_multivariable(par$mu, par$A, spOccPnts, samMPts)
+par <- get_ellip_par(spOccPnts)
+negloglike_multivariable(par$mu, par$S, spOccPnts, samMPts)
 }

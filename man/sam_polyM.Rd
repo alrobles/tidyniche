@@ -20,5 +20,5 @@ a data frame with a sample of environmental values inside the M polygon
 Sample environmental points from M hypothesis
 }
 \examples{
-sam_polyM(M.shp = Mshp, N = 10000, env = stack_1_12 )
+sam_polyM(M.shp = Mshp, N = 100, env = stack_1_12 )
 }

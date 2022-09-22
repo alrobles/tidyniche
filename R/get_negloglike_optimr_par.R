@@ -12,23 +12,22 @@
 #' @export
 #'
 #' @examples
-#' get_negloglike_optimr_par(spOccPnts, samMPts)
+#' MPts <- sam_polyM(Mshp, stack_1_12, 500)
+#' get_negloglike_optimr_par(head(spOccPnts, 30), MPts)
+
 get_negloglike_optimr_par <- function(env_pts, M_pts, lower = FALSE){
-  par <- get_optim_par(env_pts)
-
-
+  par <- get_ellip_par(env_pts)
   initial.param <- as.relistable(par)
   ul <- unlist(initial.param)
   guess <- relist(ul)
-
   like.fn <- function(param.vector)
   {
     param <- relist(param.vector, skeleton = par)
-    negloglike_multivariable(param$mu, param$A, sam1 = env_pts, sam2 = M_pts)
+    negloglike_multivariable(param$mu, param$S, sam1 = env_pts, sam2 = M_pts)
   }
 
   if(lower == TRUE){
-    min.par <- get_optim_par(M_pts)
+    min.par <- get_ellip_par(M_pts)
     find.mle <- optimr::optimr(par = unlist(par), fn = like.fn,
                                lower = unlist(min.par),
                                method="Rvmmin" )
@@ -39,6 +38,5 @@ get_negloglike_optimr_par <- function(env_pts, M_pts, lower = FALSE){
   }
 
   mle.par <- relist(find.mle$par, par)
-  mle.par$A <- chol2inv(chol(mle.par$A))
   return(mle.par)
 }
